@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CinemaSearch</string>
+    <string name="btn_menu">Menu</string>
+    <string name="btn_favor">Favorite</string>
+    <string name="btn_later">Later</string>
+    <string name="btn_selections">Selections</string>
+    <string name="btn_settings">Settings</string>
+</resources>

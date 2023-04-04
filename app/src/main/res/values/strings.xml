@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">CinemaSearch</string>
+    <string name="button_name" translatable="false">Button</string>
+    <string name="disclaimer" translatable="false">Постеры предоставлены https://www.movieposters.com/</string>
+    <string name="btn_menu">Меню</string>
+    <string name="btn_favor">Избранное</string>
+    <string name="btn_later">Посмотреть позже</string>
+    <string name="btn_selections">Подборки</string>
+    <string name="btn_settings">Настройки</string>
 </resources>
