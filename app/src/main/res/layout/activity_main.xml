@@ -11,27 +11,27 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="@dimen/vertical_indent"
+        android:layout_marginEnd="@dimen/horizontal_indent"
         android:text="@string/disclaimer"
         android:autoLink="web"
         android:linksClickable="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/top_container" />
+        app:layout_constraintTop_toBottomOf="@+id/topContainer" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/top_container"
+        android:id="@+id/topContainer"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_margin="10dp"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintTop_toBottomOf="@+id/app_bar_layout"
+        android:layout_height="@dimen/height_layout"
+        android:layout_margin="@dimen/margin_layout"
+        app:cardCornerRadius="@dimen/poster_corner"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
         tools:layout_editor_absoluteX="10dp">
 
         <LinearLayout
-            android:id="@+id/menu_top"
+            android:id="@+id/menuTop"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/height_layout"
             android:orientation="horizontal"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -72,7 +72,7 @@
 
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar_layout"
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent">
@@ -89,7 +89,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+        android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/purple_500"
