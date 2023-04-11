@@ -10,4 +10,6 @@
     <color name="color_button_menu">#FFC107</color>
     <color name="color_menu_bottom">#009688</color>
     <color name="color_menu_top">#3F51B5</color>
+    <color name="color_primary_dark">#FFFFFF</color>
+
 </resources>
