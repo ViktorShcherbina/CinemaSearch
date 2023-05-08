@@ -13,4 +13,8 @@
     <string name="alertdialog_positive">Да</string>
     <string name="alertdialog_negative">Нет</string>
     <string name="page_title">Search it!</string>
+    <string name="settings_text">Настройки</string>
+    <string name="favorite_text">Избранное</string>
+    <string name="later_text">Посмотреть позже</string>
+    <string name="selections_text">Подборки</string>
 </resources>

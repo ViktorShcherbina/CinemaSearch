@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import store.devshcherbinavv.cinemasearch.databinding.ActivityMainBinding
 
 
+
 @Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         if (supportFragmentManager.backStackEntryCount == 1) {
             AlertDialog.Builder(this)
@@ -58,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         binding.topAppBar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.settings -> {
-                    Toast.makeText(this, "Настройки", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.settings_text), Toast.LENGTH_SHORT).show()
                     true
                 }
                 else -> false
@@ -68,15 +70,15 @@ class MainActivity : AppCompatActivity() {
 
             when (it.itemId) {
                  R.id.favorites-> {
-                    Toast.makeText(this, "Избранное", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.favorite_text), Toast.LENGTH_SHORT).show()
                     true
                 }
                 R.id.watch_later -> {
-                    Toast.makeText(this, "Посмотреть позже", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.later_text), Toast.LENGTH_SHORT).show()
                     true
                 }
                 R.id.selections -> {
-                    Toast.makeText(this, "Подборки", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.selections_text), Toast.LENGTH_SHORT).show()
                     true
                 }
                 else -> false
