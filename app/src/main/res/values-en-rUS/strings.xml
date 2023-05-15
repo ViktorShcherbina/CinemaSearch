@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">CinemaSearch</string>
+    <string name="alertdialog_title">Do you really want to leave?</string>
+    <string name="alertdialog_positive">Yes</string>
+    <string name="alertdialog_negative">No</string>
+    <string name="page_title">Search it!</string>
+    <string name="settings_text">Settings</string>
+    <string name="favorite_text">Favorites</string>
+    <string name="later_text">Watch Later</string>
+    <string name="selections_text">Selections</string>
+    <string name="snack_favorites">Added to \"Favorites\"</string>
+    <string name="snack_favorites_deleted">Remove from \"Favorites\"</string>
+    <string name="share_text">Share</string>
 </resources>

@@ -51,6 +51,7 @@
         android:layout_margin="16dp"
         android:backgroundTint="@color/purple_700"
         android:tint="@color/white"
+        android:contentDescription="@string/share_text"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|right"
         app:srcCompat="@drawable/ic_baseline_share" />
@@ -64,6 +65,7 @@
         android:layout_margin="16dp"
         app:borderWidth="0dp"
         android:backgroundTint="@color/purple_700"
+        android:contentDescription="@string/favorite_text"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="left|bottom"
         app:srcCompat="@drawable/ic_baseline_favorite_24"
