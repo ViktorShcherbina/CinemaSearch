@@ -3,10 +3,8 @@ package store.devshcherbinavv.cinemasearch
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import store.devshcherbinavv.cinemasearch.databinding.FilmItemBinding
+
 
 
 class FilmListRecyclerAdapter(private val clickListener: OnItemClickListener) :
@@ -36,6 +34,7 @@ class FilmListRecyclerAdapter(private val clickListener: OnItemClickListener) :
     fun addItems(list: List<Film>) {
         items.clear()
         items.addAll(list)
+        notifyDataSetChanged()
     }
 
     interface OnItemClickListener {
