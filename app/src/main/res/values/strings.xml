@@ -1,15 +1,16 @@
 <resources>
-    <string name="app_name">CinemaSearch</string>
+    <string name="app_name" translatable="false">CinemaSearch</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="alertdialog_title">Вы действительно хотите выйти?</string>
-    <string name="alertdialog_positive">Да</string>
-    <string name="alertdialog_negative">Нет</string>
-    <string name="page_title">Search it!</string>
-    <string name="settings_text">Настройки</string>
-    <string name="favorite_text">Избранное</string>
-    <string name="later_text">Посмотреть позже</string>
-    <string name="selections_text">Подборки</string>
-    <string name="snack_favorites">Добавлено в \"Избранное\"</string>
-    <string name="snack_favorites_deleted">Удалить из \"Избранного\"</string>
+    <string name="alertdialog_title" translatable="false">Вы действительно хотите выйти?</string>
+    <string name="alertdialog_positive" translatable="false">Да</string>
+    <string name="alertdialog_negative" translatable="false">Нет</string>
+    <string name="page_title" translatable="false">Найти</string>
+    <string name="settings_text" translatable="false">Настройки</string>
+    <string name="favorite_text" translatable="false">Избранное</string>
+    <string name="selections_text" translatable="false">Подборки</string>
+    <string name="snack_favorites" translatable="false">Добавлено в \"Избранное\"</string>
+    <string name="snack_favorites_deleted" translatable="false">Удалить из \"Избранного\"</string>
+    <string name="share_text" translatable="false">Поделиться</string>
+    <string name="later_text" translatable="false">Посмотреть позже</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>
