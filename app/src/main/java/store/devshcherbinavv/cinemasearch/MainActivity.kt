@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import store.devshcherbinavv.cinemasearch.databinding.ActivityMainBinding
 
 
@@ -78,26 +79,47 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigation.setOnItemSelectedListener(){
 
             when (it.itemId) {
+                R.id.home -> {
+                    val tag = "home"
+                    val fragment = checkFragmentExistence(tag)
+                    changeFragment(fragment?: HomeFragment(filmsDataBase), tag)
+                    Toast.makeText(this, getString(R.string.menu_home_title_text), Toast.LENGTH_SHORT).show()
+                    true
+                }
                  R.id.favorites-> {
-                     supportFragmentManager
-                         .beginTransaction()
-                         .replace(R.id.fragment_placeholder, FavoritesFragment(filmsDataBase))
-                         .addToBackStack(null)
-                         .commit()
+                     val tag = "favorites"
+                     val fragment = checkFragmentExistence(tag)
+                     changeFragment(fragment?: FavoritesFragment(filmsDataBase), tag)
                     Toast.makeText(this, getString(R.string.favorite_text), Toast.LENGTH_SHORT).show()
                     true
                 }
                 R.id.watch_later -> {
+                    val tag = "watch_later"
+                    val fragment = checkFragmentExistence(tag)
+                    changeFragment(fragment?: WatchLaterFragment(), tag)
                     Toast.makeText(this, getString(R.string.later_text), Toast.LENGTH_SHORT).show()
                     true
                 }
                 R.id.selections -> {
+                    val tag = "selections"
+                    val fragment = checkFragmentExistence(tag)
+                    changeFragment(fragment?: SelectionsFragment(), tag)
                     Toast.makeText(this, getString(R.string.selections_text), Toast.LENGTH_SHORT).show()
                     true
                 }
                 else -> false
             }
         }
+    }
+
+    private fun checkFragmentExistence(tag: String) : Fragment? = supportFragmentManager.findFragmentByTag(tag)
+
+    private fun changeFragment(fragment: Fragment, tag: String) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_placeholder, fragment, tag)
+            .addToBackStack(null)
+            .commit()
     }
 
 }
