@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/favorites_fragment_root"
-    android:background="@drawable/holo_green_dark"
+    android:id="@+id/watch_later_fragment_root"
+    android:background="@drawable/holo_orange_dark"
     android:visibility="invisible"
     tools:visibility="visible"
-    tools:context=".FavoritesFragment">
+    tools:context=".WatchLaterFragment">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottie_anim"
@@ -20,13 +20,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/heart_anim" />
+        app:lottie_rawRes="@raw/watch_later_anim" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcFavorites"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/film_item"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

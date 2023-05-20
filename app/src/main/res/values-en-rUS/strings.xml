@@ -12,4 +12,5 @@
     <string name="snack_favorites">Added to \"Favorites\"</string>
     <string name="snack_favorites_deleted">Remove from \"Favorites\"</string>
     <string name="share_text">Share</string>
+    <string name="menu_home_title_text">Home</string>
 </resources>
