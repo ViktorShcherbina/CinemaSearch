@@ -1,4 +1,4 @@
-package store.devshcherbinavv.cinemasearch
+package store.devshcherbinavv.cinemasearch.domain
 
 
 import android.os.Parcelable

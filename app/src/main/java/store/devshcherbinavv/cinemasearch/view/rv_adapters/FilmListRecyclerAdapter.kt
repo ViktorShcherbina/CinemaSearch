@@ -1,10 +1,11 @@
-package store.devshcherbinavv.cinemasearch
+package store.devshcherbinavv.cinemasearch.view.rv_adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-
+import store.devshcherbinavv.cinemasearch.R
+import store.devshcherbinavv.cinemasearch.domain.Film
+import store.devshcherbinavv.cinemasearch.view.rv_viewholders.FilmViewHolder
 
 
 class FilmListRecyclerAdapter(private val clickListener: OnItemClickListener) :
