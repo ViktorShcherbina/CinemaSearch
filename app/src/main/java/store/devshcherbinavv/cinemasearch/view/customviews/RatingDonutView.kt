@@ -1,4 +1,4 @@
-package store.devshcherbinavv.cinemasearch
+package store.devshcherbinavv.cinemasearch.view.customviews
 
 import android.animation.ValueAnimator
 import android.content.Context
@@ -6,6 +6,7 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
+import store.devshcherbinavv.cinemasearch.R
 
 class RatingDonutView @JvmOverloads constructor(
     context: Context,

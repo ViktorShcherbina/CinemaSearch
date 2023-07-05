@@ -1,11 +1,13 @@
-package store.devshcherbinavv.cinemasearch
+package store.devshcherbinavv.cinemasearch.view.rv_viewholders
 
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import store.devshcherbinavv.cinemasearch.R
 import store.devshcherbinavv.cinemasearch.databinding.FilmItemBinding
+import store.devshcherbinavv.cinemasearch.domain.Film
 
 class FilmViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val filmBinding = FilmItemBinding.bind(itemView)

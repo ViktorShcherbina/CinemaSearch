@@ -1,4 +1,4 @@
-package store.devshcherbinavv.cinemasearch
+package store.devshcherbinavv.cinemasearch.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,14 +6,34 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import store.devshcherbinavv.cinemasearch.MainActivity
 import store.devshcherbinavv.cinemasearch.databinding.FragmentHomeBinding
+import store.devshcherbinavv.cinemasearch.domain.Film
+import store.devshcherbinavv.cinemasearch.utils.AnimationHelper
+import store.devshcherbinavv.cinemasearch.view.rv_adapters.FilmListRecyclerAdapter
+import store.devshcherbinavv.cinemasearch.view.rv_adapters.TopSpacingItemDecoration
+import store.devshcherbinavv.cinemasearch.viewmodel.HomeFragmentViewModel
 import java.util.*
 
 
-class HomeFragment(private val filmsDataBase : List <Film>) : Fragment() {
+class HomeFragment : Fragment() {
+    private val viewModel by lazy {
+        ViewModelProvider.NewInstanceFactory().create(HomeFragmentViewModel::class.java)
+    }
     private lateinit var binding: FragmentHomeBinding
-    private var filmsAdapter = FilmListRecyclerAdapter(object : FilmListRecyclerAdapter.OnItemClickListener{
+    private var filmsDataBase = listOf<Film>()
+        //Используем backing field
+        set(value) {
+            //Если придет такое же значение то мы выходим из метода
+            if (field == value) return
+            //Если пришло другое значение, то кладем его в переменную
+            field = value
+            //Обновляем RV адаптер
+            filmsAdapter.addItems(field)
+        }
+    private var filmsAdapter = FilmListRecyclerAdapter(object : FilmListRecyclerAdapter.OnItemClickListener {
         override fun click(film: Film) {
             (requireActivity() as MainActivity).launchDetailsFragment(film)
         }
@@ -56,6 +76,9 @@ class HomeFragment(private val filmsDataBase : List <Film>) : Fragment() {
         })
         initRV()
         filmsAdapter.addItems(filmsDataBase)
+        viewModel.filmsListLiveData.observe(viewLifecycleOwner,androidx.lifecycle.Observer<List<Film>>{
+            filmsDataBase = it
+        })
 
     }
 

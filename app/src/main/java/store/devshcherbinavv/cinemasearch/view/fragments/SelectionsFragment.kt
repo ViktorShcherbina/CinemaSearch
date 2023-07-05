@@ -1,4 +1,4 @@
-package store.devshcherbinavv.cinemasearch
+package store.devshcherbinavv.cinemasearch.view.fragments
 
 import android.os.Bundle
 
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import store.devshcherbinavv.cinemasearch.databinding.FragmentSelectionsBinding
+import store.devshcherbinavv.cinemasearch.utils.AnimationHelper
 
 class SelectionsFragment : Fragment() {
     private lateinit var binding: FragmentSelectionsBinding

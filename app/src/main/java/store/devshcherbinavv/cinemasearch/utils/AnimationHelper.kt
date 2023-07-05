@@ -1,4 +1,4 @@
-package store.devshcherbinavv.cinemasearch
+package store.devshcherbinavv.cinemasearch.utils
 
 import android.app.Activity
 import android.view.View

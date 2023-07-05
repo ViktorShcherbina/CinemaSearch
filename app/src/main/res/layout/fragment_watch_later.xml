@@ -8,7 +8,7 @@
     android:background="@drawable/holo_orange_dark"
     android:visibility="invisible"
     tools:visibility="visible"
-    tools:context=".WatchLaterFragment">
+    tools:context=".view.fragments.WatchLaterFragment">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottie_anim"
