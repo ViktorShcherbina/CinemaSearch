@@ -8,7 +8,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import store.devshcherbinavv.cinemasearch.MainActivity
+import store.devshcherbinavv.cinemasearch.view.MainActivity
 import store.devshcherbinavv.cinemasearch.databinding.FragmentHomeBinding
 import store.devshcherbinavv.cinemasearch.domain.Film
 import store.devshcherbinavv.cinemasearch.utils.AnimationHelper
