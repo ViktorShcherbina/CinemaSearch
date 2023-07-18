@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import store.devshcherbinavv.cinemasearch.MainActivity
+import store.devshcherbinavv.cinemasearch.view.MainActivity
 import store.devshcherbinavv.cinemasearch.databinding.FragmentFavoritesBinding
 import store.devshcherbinavv.cinemasearch.domain.Film
 import store.devshcherbinavv.cinemasearch.utils.AnimationHelper

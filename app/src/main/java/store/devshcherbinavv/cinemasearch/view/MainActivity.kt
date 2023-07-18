@@ -1,10 +1,11 @@
-package store.devshcherbinavv.cinemasearch
+package store.devshcherbinavv.cinemasearch.view
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import store.devshcherbinavv.cinemasearch.R
 import store.devshcherbinavv.cinemasearch.databinding.ActivityMainBinding
 import store.devshcherbinavv.cinemasearch.domain.Film
 import store.devshcherbinavv.cinemasearch.view.*
@@ -80,7 +81,7 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this, getString(R.string.menu_home_title_text), Toast.LENGTH_SHORT).show()
                     true
                 }
-                 R.id.favorites-> {
+                 R.id.favorites -> {
                      val tag = "favorites"
                      val fragment = checkFragmentExistence(tag)
                      changeFragment(fragment?: FavoritesFragment(), tag)
