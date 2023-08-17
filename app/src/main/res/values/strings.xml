@@ -8,12 +8,19 @@
     <string name="settings_text" translatable="false">Настройки</string>
     <string name="favorite_text" translatable="false">Избранное</string>
     <string name="selections_text" translatable="false">Подборки</string>
+
     <string name="snack_favorites" translatable="false">Добавлено в \"Избранное\"</string>
     <string name="snack_favorites_deleted" translatable="false">Удалить из \"Избранного\"</string>
     <string name="share_text" translatable="false">Поделиться</string>
     <string name="later_text" translatable="false">Посмотреть позже</string>
+    <string name="menu_settings_title_text" translatable="false">Настройки</string>
+    <string name="radio_button_popular" translatable="false">Популярные</string>
+    <string name="radio_button_top_rated" translatable="false">Топ</string>
+    <string name="radio_button_upcoming" translatable="false">Скоро</string>
+    <string name="radio_button_playing" translatable="false">В кинотеатрах</string>
+    <string name="radio_group_header" translatable="false">Подборка на главном экране:</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+<!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
     <string name="menu_home_title_text" translatable="false">Главная</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

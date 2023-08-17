@@ -16,19 +16,19 @@ class FavoriteFragmentViewModel: ViewModel() {
 
     init {
         App.instance.dagger.inject(this)
-        interactor.getFavoritesFilmsFromApi(2, object : ApiCallback {
-            override fun onSuccess(films: List<Film>) {
-                filmsListLiveData.postValue(films)
-            }
-
-            override fun onFailure() {
-
-            }
-        })
+//        interactor.getFavoritesFilmsFromApi(2, object : ApiCallback {
+//            override fun onSuccess(films: List<Film>) {
+//                filmsListLiveData.postValue(films)
+//            }
+//
+//            override fun onFailure() {
+//
+//            }
+//        })
     }
-
-    interface ApiCallback {
-        fun onSuccess(films: List<Film>)
-        fun onFailure()
-    }
+//
+//    interface ApiCallback {
+//        fun onSuccess(films: List<Film>)
+//        fun onFailure()
+//    }
 }
