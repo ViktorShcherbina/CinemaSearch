@@ -102,6 +102,12 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this, getString(R.string.selections_text), Toast.LENGTH_SHORT).show()
                     true
                 }
+                R.id.settings -> {
+                    val tag = "settings"
+                    val fragment = checkFragmentExistence(tag)
+                    changeFragment( fragment?: SettingsFragment(), tag)
+                    true
+                }
                 else -> false
             }
         }
