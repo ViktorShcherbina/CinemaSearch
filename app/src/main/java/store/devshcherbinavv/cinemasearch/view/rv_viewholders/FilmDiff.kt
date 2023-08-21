@@ -1,7 +1,7 @@
 package store.devshcherbinavv.cinemasearch.view.rv_viewholders
 
 import androidx.recyclerview.widget.DiffUtil
-import store.devshcherbinavv.cinemasearch.domain.Film
+import store.devshcherbinavv.cinemasearch.data.entity.Film
 
 class FilmDiff(val oldList: ArrayList<Film>, val newList: ArrayList<Film>) : DiffUtil.Callback() {
     override fun getOldListSize(): Int {

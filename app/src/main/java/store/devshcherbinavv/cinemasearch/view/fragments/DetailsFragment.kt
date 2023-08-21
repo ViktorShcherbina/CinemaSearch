@@ -11,7 +11,7 @@ import com.google.android.material.snackbar.Snackbar.*
 import store.devshcherbinavv.cinemasearch.data.ApiConstants
 import store.devshcherbinavv.cinemasearch.R
 import store.devshcherbinavv.cinemasearch.databinding.FragmentDetailsBinding
-import store.devshcherbinavv.cinemasearch.domain.Film
+import store.devshcherbinavv.cinemasearch.data.entity.Film
 
 
 @Suppress("DEPRECATION")

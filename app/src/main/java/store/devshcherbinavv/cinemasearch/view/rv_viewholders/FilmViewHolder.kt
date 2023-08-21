@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import store.devshcherbinavv.cinemasearch.data.ApiConstants
 import store.devshcherbinavv.cinemasearch.R
 import store.devshcherbinavv.cinemasearch.databinding.FilmItemBinding
-import store.devshcherbinavv.cinemasearch.domain.Film
+import store.devshcherbinavv.cinemasearch.data.entity.Film
 
 class FilmViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val filmBinding = FilmItemBinding.bind(itemView)
