@@ -1,9 +1,6 @@
 package store.devshcherbinavv.cinemasearch.data
 
-import android.content.ContentValues
-import android.database.Cursor
 import store.devshcherbinavv.cinemasearch.data.dao.FilmDao
-import store.devshcherbinavv.cinemasearch.data.db.DatabaseHelper
 import store.devshcherbinavv.cinemasearch.data.entity.Film
 import java.util.concurrent.Executors
 

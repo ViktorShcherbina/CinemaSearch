@@ -8,7 +8,6 @@ import dagger.Provides
 import store.devshcherbinavv.cinemasearch.data.MainRepository
 import store.devshcherbinavv.cinemasearch.data.dao.FilmDao
 import store.devshcherbinavv.cinemasearch.data.db.AppDatabase
-import store.devshcherbinavv.cinemasearch.data.db.DatabaseHelper
 import javax.inject.Singleton
 
 @Module
