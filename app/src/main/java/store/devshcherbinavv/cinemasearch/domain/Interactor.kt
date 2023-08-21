@@ -2,15 +2,13 @@ package store.devshcherbinavv.cinemasearch.domain
 
 import retrofit2.Call
 import retrofit2.Callback
-import retrofit2.Converter
 import retrofit2.Response
-import store.devshcherbinavv.cinemasearch.data.API
 import store.devshcherbinavv.cinemasearch.data.API.API_KEY
 import store.devshcherbinavv.cinemasearch.data.TmdbApi
 import store.devshcherbinavv.cinemasearch.data.MainRepository
 import store.devshcherbinavv.cinemasearch.data.PreferenceProvider
+import store.devshcherbinavv.cinemasearch.data.entity.Film
 import store.devshcherbinavv.cinemasearch.data.entity.TmdbResultsDto
-import store.devshcherbinavv.cinemasearch.viewmodel.FavoriteFragmentViewModel
 import store.devshcherbinavv.cinemasearch.viewmodel.HomeFragmentViewModel
 
 class Interactor(private val repo: MainRepository, private val retrofitService: TmdbApi, private val preferences: PreferenceProvider) {
@@ -22,7 +20,7 @@ class Interactor(private val repo: MainRepository, private val retrofitService: 
                 val list = store.devshcherbinavv.cinemasearch.utils.Converter.convertApiListToDtoList(response.body()?.tmdbFilms)
                 //Кладем фильмы в бд
                 list.forEach {
-                    repo.putToDb(film = it)
+                    repo.putToDb(list)
                 }
                 callback.onSuccess(list)
             }

@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import store.devshcherbinavv.cinemasearch.R
-import store.devshcherbinavv.cinemasearch.domain.Film
+import store.devshcherbinavv.cinemasearch.data.entity.Film
 import store.devshcherbinavv.cinemasearch.view.rv_viewholders.FilmViewHolder
 
 
