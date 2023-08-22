@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -64,6 +65,9 @@ class HomeFragment : Fragment() {
         viewModel.filmsListLiveData.observe(viewLifecycleOwner){
             filmsDataBase = it
             filmsAdapter.addItems(it)
+        }
+        viewModel.showProgressBar.observe(viewLifecycleOwner) {
+            binding.progressBar.isVisible = it
         }
 
     }
@@ -129,4 +133,5 @@ class HomeFragment : Fragment() {
             addItemDecoration(decorator)
         }
     }
+
 }
