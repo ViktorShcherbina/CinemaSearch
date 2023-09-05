@@ -19,6 +19,9 @@
     <string name="radio_button_upcoming" translatable="false">Скоро</string>
     <string name="radio_button_playing" translatable="false">В кинотеатрах</string>
     <string name="radio_group_header" translatable="false">Подборка на главном экране:</string>
+    <string name="permission_storage">Нет разрешения. Пожалуйста, предоставьте разрешение</string>
+    <string name="downloaded_to_gallery">"Сохранено в галерею"</string>
+    <string name="open">В галерею</string>
     <!-- TODO: Remove or change this placeholder text -->
 <!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
     <string name="menu_home_title_text" translatable="false">Главная</string>
