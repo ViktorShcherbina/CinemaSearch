@@ -9,11 +9,11 @@ import store.devshcherbinavv.cinemasearch.domain.Interactor
 import javax.inject.Inject
 
 class FavoriteFragmentViewModel: ViewModel() {
-    val filmsListLiveData: MutableLiveData<List<Film>> = MutableLiveData()
+
     //Инициализируем интерактор
     @Inject
     lateinit var interactor: Interactor
-
+    val filmsListData: MutableLiveData<List<Film>> = MutableLiveData()
     init {
         App.instance.dagger.inject(this)
 //        interactor.getFavoritesFilmsFromApi(2, object : ApiCallback {

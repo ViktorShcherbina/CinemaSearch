@@ -3,6 +3,7 @@ package store.devshcherbinavv.cinemasearch.view.rv_adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.CoroutineScope
 import store.devshcherbinavv.cinemasearch.R
 import store.devshcherbinavv.cinemasearch.data.entity.Film
 import store.devshcherbinavv.cinemasearch.view.rv_viewholders.FilmViewHolder
@@ -32,9 +33,13 @@ class FilmListRecyclerAdapter(private val clickListener: OnItemClickListener) :
         return items.size
     }
 
+    //Метод для добавления объектов в наш список
     fun addItems(list: List<Film>) {
+        //Сначала очишаем(если не реализовать DiffUtils)
         items.clear()
+        //Добавляем
         items.addAll(list)
+        //Уведомляем RV, что пришел новый список и ему нужно заново все "привязывать"
         notifyDataSetChanged()
     }
 
