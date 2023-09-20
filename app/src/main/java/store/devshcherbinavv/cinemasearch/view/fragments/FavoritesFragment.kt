@@ -54,7 +54,7 @@ class FavoritesFragment: Fragment() {
 
         initRecycler()
         filmsAdapter.addItems(filmsDataBase)
-        viewModel.filmsListLiveData.observe(
+        viewModel.filmsListData.observe(
             viewLifecycleOwner
         ) {
             filmsDataBase = it
