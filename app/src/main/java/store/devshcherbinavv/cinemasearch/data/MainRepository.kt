@@ -1,6 +1,7 @@
 package store.devshcherbinavv.cinemasearch.data
 
 
+import io.reactivex.rxjava3.core.Observable
 import kotlinx.coroutines.flow.Flow
 import store.devshcherbinavv.cinemasearch.data.dao.FilmDao
 import store.devshcherbinavv.cinemasearch.data.entity.Film
@@ -14,7 +15,7 @@ class MainRepository (private val filmDao: FilmDao){
         }
     }
 
-    fun getAllFromDB(): Flow<List<Film>> {
+    fun getAllFromDB(): Observable<List<Film>> {
         return filmDao.getCachedFilms()
     }
 
