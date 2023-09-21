@@ -9,11 +9,15 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.schedulers.Schedulers
 import kotlinx.coroutines.*
 import store.devshcherbinavv.cinemasearch.view.MainActivity
 import store.devshcherbinavv.cinemasearch.databinding.FragmentHomeBinding
 import store.devshcherbinavv.cinemasearch.data.entity.Film
 import store.devshcherbinavv.cinemasearch.utils.AnimationHelper
+import store.devshcherbinavv.cinemasearch.utils.AutoDisposable
+import store.devshcherbinavv.cinemasearch.utils.addTo
 import store.devshcherbinavv.cinemasearch.view.rv_adapters.FilmListRecyclerAdapter
 import store.devshcherbinavv.cinemasearch.view.rv_adapters.TopSpacingItemDecoration
 import store.devshcherbinavv.cinemasearch.viewmodel.HomeFragmentViewModel
@@ -24,7 +28,7 @@ class HomeFragment : Fragment() {
     private val viewModel by lazy {
         ViewModelProvider.NewInstanceFactory().create(HomeFragmentViewModel::class.java)
     }
-    private lateinit var scope: CoroutineScope
+    private val autoDisposable = AutoDisposable()
     private lateinit var filmsAdapter: FilmListRecyclerAdapter
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -42,7 +46,8 @@ class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        retainInstance = true
+        context?.let { viewModel.getFilms() }
+        autoDisposable.bindTo(lifecycle)
     }
 
     override fun onCreateView(
@@ -67,28 +72,18 @@ class HomeFragment : Fragment() {
         //находим наш RV
         initRv()
         //Кладем нашу БД в RV
-        scope = CoroutineScope(Dispatchers.IO).also { scope ->
-            scope.launch {
-                viewModel.filmsListData.collect {
-                    withContext(Dispatchers.Main) {
-                        filmsAdapter.addItems(it)
-                        filmsDataBase = it
-                    }
-                }
-            }
-            scope.launch {
-                for (element in viewModel.showProgressBar) {
-                    launch(Dispatchers.Main) {
-                        binding.progressBar.isVisible = element
-                    }
-                }
-            }
-        }
-    }
+        viewModel.filmsListData
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe { list ->
+                filmsAdapter.addItems(list)
+                filmsDataBase = list
+            }.addTo(autoDisposable)
 
-    override fun onStop() {
-        super.onStop()
-        scope.cancel()
+        viewModel.showProgressBar
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe { binding.progressBar.isVisible = it }.addTo(autoDisposable)
     }
 
     private fun initPullToRefresh() {
