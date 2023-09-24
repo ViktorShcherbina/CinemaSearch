@@ -19,6 +19,7 @@ object Converter {
                 description = it.overview,
                 rating = it.voteAverage,
                 isInFavorites = false
+
             )
             )
         }

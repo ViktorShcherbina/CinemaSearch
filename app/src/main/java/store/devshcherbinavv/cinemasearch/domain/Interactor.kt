@@ -47,6 +47,12 @@ class Interactor(private val repo: MainRepository, private val retrofitService: 
             }
         })
     }
+    // метод запроса поиска в API
+    fun getSearchResultFromApi(search: String): Observable<List<Film>> = retrofitService.getFilmFromSearch(API_KEY, "ru-RU", search, 1)
+        .map {
+            Converter.convertApiListToDtoList(it.tmdbFilms)
+        }
+
     //Метод для сохранения настроек
     fun saveDefaultCategoryToPreferences(category: String) {
         preferences.saveDefaultCategory(category)
