@@ -4,8 +4,6 @@ package store.devshcherbinavv.cinemasearch.viewmodel
 import androidx.lifecycle.ViewModel
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.subjects.BehaviorSubject
-import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.Flow
 import store.devshcherbinavv.cinemasearch.App
 import store.devshcherbinavv.cinemasearch.data.entity.Film
 import store.devshcherbinavv.cinemasearch.domain.Interactor
@@ -27,5 +25,9 @@ class HomeFragmentViewModel : ViewModel() {
 
     fun getFilms() {
         interactor.getFilmsFromApi(1)
+
+
     }
+
+    fun getSearchResult(search: String) = interactor.getSearchResultFromApi(search)
 }
