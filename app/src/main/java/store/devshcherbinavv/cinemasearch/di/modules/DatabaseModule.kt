@@ -7,19 +7,18 @@ import dagger.Module
 import dagger.Provides
 import store.devshcherbinavv.cinemasearch.data.MainRepository
 import store.devshcherbinavv.cinemasearch.data.dao.FilmDao
-import store.devshcherbinavv.cinemasearch.data.db.AppDatabase
 import javax.inject.Singleton
 
 @Module
 class DatabaseModule {
-    @Singleton
-    @Provides
-    fun provideFilmDao(context: Context) =
-        Room.databaseBuilder(
-            context,
-            AppDatabase::class.java,
-            "film_db"
-        ).build().filmDao()
+//    @Singleton
+//    @Provides
+//    fun provideFilmDao(context: Context) =
+//        Room.databaseBuilder(
+//            context,
+//            ItemsDatabase::class.java,
+//            "film_db"
+//        ).build().filmDao()
 
     @Provides
     @Singleton

@@ -3,17 +3,17 @@ package store.devshcherbinavv.cinemasearch.di
 import dagger.Component
 import store.devshcherbinavv.cinemasearch.di.modules.DatabaseModule
 import store.devshcherbinavv.cinemasearch.di.modules.DomainModule
-import store.devshcherbinavv.cinemasearch.di.modules.RemoteModule
 import store.devshcherbinavv.cinemasearch.viewmodel.FavoriteFragmentViewModel
 import store.devshcherbinavv.cinemasearch.viewmodel.HomeFragmentViewModel
 import store.devshcherbinavv.cinemasearch.viewmodel.SettingsFragmentViewModel
+import store.devshcherbinavv.remote_module.RemoteProvider
 import javax.inject.Singleton
 
 @Singleton
 @Component(
     //Внедряем все модули, нужные для этого компонента
+    dependencies = [RemoteProvider::class],
     modules = [
-        RemoteModule::class,
         DatabaseModule::class,
         DomainModule::class
     ]

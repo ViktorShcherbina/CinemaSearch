@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "CinemaSearch"
 include ':app'
+include ':remote_module'
+include ':room_module'

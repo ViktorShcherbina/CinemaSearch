@@ -1,13 +1,12 @@
 package store.devshcherbinavv.cinemasearch.di.modules
 
 import android.content.Context
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import store.devshcherbinavv.cinemasearch.data.MainRepository
 import store.devshcherbinavv.cinemasearch.data.PreferenceProvider
-import store.devshcherbinavv.cinemasearch.data.TmdbApi
 import store.devshcherbinavv.cinemasearch.domain.Interactor
+import store.devshcherbinavv.remote_module.TmdbApi
 import javax.inject.Singleton
 
 @Module

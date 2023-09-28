@@ -2,14 +2,10 @@ package store.devshcherbinavv.cinemasearch.utils
 
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.Disposable
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.flow.map
-import store.devshcherbinavv.cinemasearch.data.entity.TmdbFilm
 import store.devshcherbinavv.cinemasearch.data.entity.Film
 
 object Converter {
-    fun convertApiListToDtoList(list: List<TmdbFilm>?): List<Film> {
+    fun convertApiListToDtoList(list: List<store.devshcherbinavv.remote_module.entity.TmdbFilm>?): List<Film> {
         val result = mutableListOf<Film>()
         list?.forEach {
             result.add(
@@ -26,7 +22,7 @@ object Converter {
         return result
     }
 
-        fun mapConvertApiListToDtoList(list: List<TmdbFilm>): Disposable {
+        fun mapConvertApiListToDtoList(list: List<store.devshcherbinavv.remote_module.entity.TmdbFilm>): Disposable {
         val result = Observable.just(list).map{
             it.forEach {
                 Film(

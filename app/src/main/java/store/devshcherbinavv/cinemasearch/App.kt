@@ -1,21 +1,13 @@
 package store.devshcherbinavv.cinemasearch
 
 import android.app.Application
-import okhttp3.OkHttpClient
-import okhttp3.internal.Internal.instance
-import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import store.devshcherbinavv.cinemasearch.data.ApiConstants
-import store.devshcherbinavv.cinemasearch.data.MainRepository
-import store.devshcherbinavv.cinemasearch.data.TmdbApi
 import store.devshcherbinavv.cinemasearch.di.AppComponent
 import store.devshcherbinavv.cinemasearch.di.DaggerAppComponent
 import store.devshcherbinavv.cinemasearch.di.modules.DatabaseModule
 import store.devshcherbinavv.cinemasearch.di.modules.DomainModule
-import store.devshcherbinavv.cinemasearch.di.modules.RemoteModule
-import store.devshcherbinavv.cinemasearch.domain.Interactor
-import java.util.concurrent.TimeUnit
+import store.devshcherbinavv.remote_module.DaggerRemoteComponent
+
+
 
 class App : Application() {
     lateinit var dagger: AppComponent
@@ -24,8 +16,9 @@ class App : Application() {
         super.onCreate()
         instance = this
         //Создаем компонент
+        val remoteProvider = DaggerRemoteComponent.create()
         dagger = DaggerAppComponent.builder()
-            .remoteModule(RemoteModule())
+            .remoteProvider(remoteProvider)
             .databaseModule(DatabaseModule())
             .domainModule(DomainModule(this))
             .build()

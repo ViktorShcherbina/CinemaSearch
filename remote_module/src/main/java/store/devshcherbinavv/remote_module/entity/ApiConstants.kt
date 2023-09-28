@@ -1,4 +1,4 @@
-package store.devshcherbinavv.cinemasearch.data
+package store.devshcherbinavv.remote_module.entity
 
 object ApiConstants {
     const val BASE_URL = "https://api.themoviedb.org/"
