@@ -1,4 +1,4 @@
-package store.devshcherbinavv.cinemasearch.data.entity
+package store.devshcherbinavv.remote_module.entity
 
 import com.google.gson.annotations.SerializedName
 

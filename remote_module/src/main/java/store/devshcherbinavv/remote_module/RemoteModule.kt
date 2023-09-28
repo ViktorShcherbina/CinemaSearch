@@ -1,6 +1,5 @@
-package store.devshcherbinavv.cinemasearch.di.modules
+package store.devshcherbinavv.remote_module
 
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
@@ -8,9 +7,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import store.devshcherbinavv.cinemasearch.BuildConfig
-import store.devshcherbinavv.cinemasearch.data.ApiConstants
-import store.devshcherbinavv.cinemasearch.data.TmdbApi
+import store.devshcherbinavv.remote_module.entity.ApiConstants
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -45,5 +42,6 @@ class RemoteModule {
 
     @Provides
     @Singleton
-    fun provideTmdbApi(retrofit: Retrofit): TmdbApi = retrofit.create(TmdbApi::class.java)
+    fun provideTmdbApi(retrofit: Retrofit): TmdbApi = retrofit.create(
+        TmdbApi::class.java)
 }

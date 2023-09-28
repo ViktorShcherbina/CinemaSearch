@@ -1,11 +1,10 @@
-package store.devshcherbinavv.cinemasearch.data
+package store.devshcherbinavv.remote_module
 
 import io.reactivex.rxjava3.core.Observable
-import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
-import store.devshcherbinavv.cinemasearch.data.entity.TmdbResultsDto
+import store.devshcherbinavv.remote_module.entity.TmdbResultsDto
 
 interface TmdbApi {
     @GET("3/movie/{category}")
@@ -14,7 +13,7 @@ interface TmdbApi {
         @Query("api_key") apiKey: String,
         @Query("language") language: String,
         @Query("page") page: Int
-    ): Call<TmdbResultsDto>
+    ): Observable<TmdbResultsDto>
 
     @GET("3/search/movie")
     fun getFilmFromSearch(

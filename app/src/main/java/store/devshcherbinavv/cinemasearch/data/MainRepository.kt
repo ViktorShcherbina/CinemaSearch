@@ -2,7 +2,6 @@ package store.devshcherbinavv.cinemasearch.data
 
 
 import io.reactivex.rxjava3.core.Observable
-import kotlinx.coroutines.flow.Flow
 import store.devshcherbinavv.cinemasearch.data.dao.FilmDao
 import store.devshcherbinavv.cinemasearch.data.entity.Film
 import java.util.concurrent.Executors
