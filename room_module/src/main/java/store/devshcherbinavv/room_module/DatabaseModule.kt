@@ -4,16 +4,17 @@ import android.content.Context
 import androidx.room.Room
 import dagger.Module
 import dagger.Provides
+import store.devshcherbinavv.cinemasearch.data.MainRepository
 import store.devshcherbinavv.cinemasearch.data.dao.FilmDao
 import javax.inject.Singleton
 
-private const val DATABASE_NAME = "ITEMS_DB"
+
 
 @Module
-object DatabaseModule {
+class DatabaseModule {
     @Provides
     @Singleton
-    fun provideDatabase (databaseContract: DatabaseContract) : FilmDao {
+    fun provideFilmDao(databaseContract: DatabaseContract) : FilmDao {
         return databaseContract.itemsDao()
     }
     @Provides
@@ -21,7 +22,11 @@ object DatabaseModule {
     fun provideItemsDatabase (context: Context): DatabaseContract{
         return Room.databaseBuilder(
             context,
-            ItemsDatabase::class.java, DATABASE_NAME
+            ItemsDatabase::class.java, "film_db"
         ).build()
     }
+
+    @Provides
+    @Singleton
+    fun provideRepository(filmDao: FilmDao) = MainRepository(filmDao)
 }

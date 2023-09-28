@@ -3,7 +3,6 @@ package store.devshcherbinavv.cinemasearch
 import android.app.Application
 import store.devshcherbinavv.cinemasearch.di.AppComponent
 import store.devshcherbinavv.cinemasearch.di.DaggerAppComponent
-import store.devshcherbinavv.cinemasearch.di.modules.DatabaseModule
 import store.devshcherbinavv.cinemasearch.di.modules.DomainModule
 import store.devshcherbinavv.remote_module.DaggerRemoteComponent
 

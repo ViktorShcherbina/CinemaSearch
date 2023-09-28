@@ -1,7 +1,7 @@
 package store.devshcherbinavv.cinemasearch.di
 
 import dagger.Component
-import store.devshcherbinavv.cinemasearch.di.modules.DatabaseModule
+import store.devshcherbinavv.room_module.Database
 import store.devshcherbinavv.cinemasearch.di.modules.DomainModule
 import store.devshcherbinavv.cinemasearch.viewmodel.FavoriteFragmentViewModel
 import store.devshcherbinavv.cinemasearch.viewmodel.HomeFragmentViewModel
@@ -12,9 +12,10 @@ import javax.inject.Singleton
 @Singleton
 @Component(
     //Внедряем все модули, нужные для этого компонента
-    dependencies = [RemoteProvider::class],
+    dependencies = [RemoteProvider::class,
+                   DatabaseModule::class],
     modules = [
-        DatabaseModule::class,
+
         DomainModule::class
     ]
 )

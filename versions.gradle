@@ -3,7 +3,7 @@ ext {
     dagger = "com.google.dagger:dagger:$daggerVersion"
     daggerCompiler = "com.google.dagger:dagger-compiler:$daggerVersion"
 
-    roomVersion = '2.1.0'
+    roomVersion = '2.3.0-beta02'
     room = "androidx.room:room-runtime:$roomVersion"
     roomCompiler = "androidx.room:room-compiler:$roomVersion"
 }
