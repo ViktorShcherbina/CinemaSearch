@@ -1,12 +1,12 @@
 package store.devshcherbinavv.cinemasearch.di
 
 import dagger.Component
-import store.devshcherbinavv.room_module.Database
 import store.devshcherbinavv.cinemasearch.di.modules.DomainModule
 import store.devshcherbinavv.cinemasearch.viewmodel.FavoriteFragmentViewModel
 import store.devshcherbinavv.cinemasearch.viewmodel.HomeFragmentViewModel
 import store.devshcherbinavv.cinemasearch.viewmodel.SettingsFragmentViewModel
 import store.devshcherbinavv.remote_module.RemoteProvider
+import store.devshcherbinavv.room_module.DatabaseModule
 import javax.inject.Singleton
 
 @Singleton
