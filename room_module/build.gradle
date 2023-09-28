@@ -58,6 +58,6 @@ dependencies {
     implementation room
     kapt roomCompiler
 
-//    api project(':app')
+    api project(':app')
     implementation project (':remote_module')
 }
