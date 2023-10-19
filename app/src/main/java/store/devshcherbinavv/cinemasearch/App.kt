@@ -1,6 +1,9 @@
 package store.devshcherbinavv.cinemasearch
 
 import android.app.Application
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.os.Build
 import okhttp3.OkHttpClient
 import okhttp3.internal.Internal.instance
 import okhttp3.logging.HttpLoggingInterceptor
@@ -15,6 +18,7 @@ import store.devshcherbinavv.cinemasearch.di.modules.DatabaseModule
 import store.devshcherbinavv.cinemasearch.di.modules.DomainModule
 import store.devshcherbinavv.cinemasearch.di.modules.RemoteModule
 import store.devshcherbinavv.cinemasearch.domain.Interactor
+import store.devshcherbinavv.cinemasearch.view.notifications.NotificationConstants.CHANNEL_ID
 import java.util.concurrent.TimeUnit
 
 class App : Application() {
@@ -29,6 +33,21 @@ class App : Application() {
             .databaseModule(DatabaseModule())
             .domainModule(DomainModule(this))
             .build()
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            //Задаем имя, описание и важность канала
+            val name = "WatchLaterChannel"
+            val descriptionText = "FilmsSearch notification Channel"
+            val importance = NotificationManager.IMPORTANCE_HIGH
+            //Создаем канал, передав в параметры его ID(строка), имя(строка), важность(константа)
+            val mChannel = NotificationChannel(CHANNEL_ID, name, importance)
+            //Отдельно задаем описание
+            mChannel.description = descriptionText
+            //Получаем доступ к менеджеру нотификаций
+            val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+            //Регистрируем канал
+            notificationManager.createNotificationChannel(mChannel)
+        }
     }
 
     companion object {

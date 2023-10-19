@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -28,9 +29,16 @@
 
         <activity
             android:name=".view.fragments.DetailsFragment"
-            android:exported="false" />
+            android:parentActivityName=".view.MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".view.MainActivity"/>
+        </activity>
+<!--            android:exported="false" />-->
+
         <activity
             android:name=".view.MainActivity"
+            android:launchMode="singleTop"
             android:exported="true">
 
         </activity>

@@ -24,6 +24,7 @@ import store.devshcherbinavv.cinemasearch.R
 import store.devshcherbinavv.cinemasearch.data.ApiConstants
 import store.devshcherbinavv.cinemasearch.data.entity.Film
 import store.devshcherbinavv.cinemasearch.databinding.FragmentDetailsBinding
+import store.devshcherbinavv.cinemasearch.view.notifications.NotificationHelper
 import store.devshcherbinavv.cinemasearch.viewmodel.DetailsFragmentViewModel
 
 
@@ -80,6 +81,10 @@ class DetailsFragment : Fragment() {
         }
         binding.detailsFabDownloadWp.setOnClickListener {
             performAsyncLoadOfPoster()
+        }
+        binding.detailsFabWatchLater.setOnClickListener {
+            NotificationHelper.createNotification(requireContext(), film)
+
         }
     }
 
@@ -190,7 +195,7 @@ class DetailsFragment : Fragment() {
             //Открываем канал для записи на диск
             val outputStream = contentResolver.openOutputStream(uri!!)
             //Передаем нашу картинку, может сделать компрессию
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream!!)
             //Закрываем поток
             outputStream?.close()
         } else {
