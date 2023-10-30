@@ -42,7 +42,7 @@
             android:exported="true">
 
         </activity>
-
+        <receiver android:name=".receivers.ReminderBroadcast"/>
     </application>
 
 </manifest>

@@ -53,6 +53,7 @@ class DetailsFragment : Fragment() {
             val snackFavorites = make(
                 binding.detailsFabFavorites,getString(R.string.snack_favorites),
                 LENGTH_SHORT
+
             )
             val snackFavoritesDeleted = make(
                 binding.detailsFabFavorites,
@@ -63,6 +64,7 @@ class DetailsFragment : Fragment() {
                 binding.detailsFabFavorites.setImageResource(R.drawable.ic_baseline_favorite_border_24)
                 film.isInFavorites = true
                 snackFavorites.show()
+
             } else {
                 binding.detailsFabFavorites.setImageResource(R.drawable.ic_baseline_favorite_24)
                 film.isInFavorites = false
@@ -83,7 +85,7 @@ class DetailsFragment : Fragment() {
             performAsyncLoadOfPoster()
         }
         binding.detailsFabWatchLater.setOnClickListener {
-            NotificationHelper.createNotification(requireContext(), film)
+            NotificationHelper.notificationSet(requireContext(), film)
 
         }
     }
