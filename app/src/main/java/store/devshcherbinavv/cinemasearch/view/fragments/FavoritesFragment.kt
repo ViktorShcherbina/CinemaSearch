@@ -1,5 +1,7 @@
 package store.devshcherbinavv.cinemasearch.view.fragments
 
+
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -20,7 +22,7 @@ class FavoritesFragment: Fragment() {
     private var filmsAdapter =
         FilmListRecyclerAdapter(object : FilmListRecyclerAdapter.OnItemClickListener {
             override fun click(film: Film) {
-                (requireActivity() as MainActivity).launchDetailsFragment(film)
+                (requireActivity() as MainActivity).launchFavoritesFragment(film)
             }
         })
     private val viewModel by lazy {
@@ -36,6 +38,14 @@ class FavoritesFragment: Fragment() {
             filmsAdapter.addItems(field)
         }
 
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        binding = FragmentFavoritesBinding.inflate(layoutInflater)
+//        val intent = Intent()
+//
+//        val bundle = intent.getParcelableExtra("film", )
+//    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,6 +53,8 @@ class FavoritesFragment: Fragment() {
     ): View {
         binding = FragmentFavoritesBinding.inflate(layoutInflater)
         return binding.root
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -51,6 +63,8 @@ class FavoritesFragment: Fragment() {
             binding.favoritesFragmentRoot,
             requireActivity(),
             2)
+
+
 
         initRecycler()
         filmsAdapter.addItems(filmsDataBase)

@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         initNavigation()
 
         supportFragmentManager
@@ -59,6 +58,8 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+
+
    }
 
     override fun onDestroy() {
@@ -70,6 +71,19 @@ class MainActivity : AppCompatActivity() {
         val bundle = Bundle()
         bundle.putParcelable("film", film)
         val fragment = DetailsFragment()
+        fragment.arguments = bundle
+
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_placeholder, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    fun launchFavoritesFragment(film: Film) {
+        val bundle = Bundle()
+        bundle.putParcelable("film", film)
+        val fragment = FavoritesFragment()
         fragment.arguments = bundle
 
         supportFragmentManager
