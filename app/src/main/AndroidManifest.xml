@@ -25,21 +25,21 @@
 
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
-        </activity>
+<!--        </activity>-->
 
-        <activity
-            android:name=".view.fragments.DetailsFragment"
-            android:parentActivityName=".view.MainActivity">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".view.MainActivity"/>
-        </activity>
-<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".view.fragments.DetailsFragment"-->
+<!--            android:parentActivityName=".view.MainActivity">-->
+<!--        <meta-data-->
+<!--            android:name="android.support.PARENT_ACTIVITY"-->
+<!--            android:value=".view.MainActivity"/>-->
+<!--        </activity>-->
+<!--&lt;!&ndash;            android:exported="false" />&ndash;&gt;-->
 
-        <activity
-            android:name=".view.MainActivity"
-            android:launchMode="singleTop"
-            android:exported="true">
+<!--        <activity-->
+<!--            android:name=".view.MainActivity"-->
+<!--            android:launchMode="singleTop"-->
+<!--            android:exported="true">-->
 
         </activity>
         <receiver android:name=".receivers.ReminderBroadcast"/>

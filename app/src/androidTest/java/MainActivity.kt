@@ -1,4 +1,4 @@
-package store.devshcherbinavv.cinemasearch.view
+package store.devshcherbinavv.cinemasearch
 
 import android.content.BroadcastReceiver
 import android.content.Intent
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-   }
+    }
 
     override fun onDestroy() {
         super.onDestroy()
@@ -130,10 +130,10 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this, getString(R.string.menu_home_title_text), Toast.LENGTH_SHORT).show()
                     true
                 }
-                 R.id.favorites -> {
-                     val tag = "favorites"
-                     val fragment = checkFragmentExistence(tag)
-                     changeFragment(fragment?: FavoritesFragment(), tag)
+                R.id.favorites -> {
+                    val tag = "favorites"
+                    val fragment = checkFragmentExistence(tag)
+                    changeFragment(fragment?: FavoritesFragment(), tag)
                     Toast.makeText(this, getString(R.string.favorite_text), Toast.LENGTH_SHORT).show()
                     true
                 }
@@ -174,7 +174,3 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
-
-
-
-
