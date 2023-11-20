@@ -15,12 +15,12 @@ import io.reactivex.rxjava3.core.ObservableOnSubscribe
 import io.reactivex.rxjava3.kotlin.subscribeBy
 import io.reactivex.rxjava3.schedulers.Schedulers
 import kotlinx.coroutines.*
-import store.devshcherbinavv.cinemasearch.view.MainActivity
 import store.devshcherbinavv.cinemasearch.databinding.FragmentHomeBinding
 import store.devshcherbinavv.cinemasearch.data.entity.Film
 import store.devshcherbinavv.cinemasearch.utils.AnimationHelper
 import store.devshcherbinavv.cinemasearch.utils.AutoDisposable
 import store.devshcherbinavv.cinemasearch.utils.addTo
+import store.devshcherbinavv.cinemasearch.view.MainActivity
 import store.devshcherbinavv.cinemasearch.view.rv_adapters.FilmListRecyclerAdapter
 import store.devshcherbinavv.cinemasearch.view.rv_adapters.TopSpacingItemDecoration
 import store.devshcherbinavv.cinemasearch.viewmodel.HomeFragmentViewModel
