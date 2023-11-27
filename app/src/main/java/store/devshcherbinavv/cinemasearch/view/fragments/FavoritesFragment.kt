@@ -1,7 +1,6 @@
 package store.devshcherbinavv.cinemasearch.view.fragments
 
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,10 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import store.devshcherbinavv.cinemasearch.view.MainActivity
 import store.devshcherbinavv.cinemasearch.databinding.FragmentFavoritesBinding
 import store.devshcherbinavv.cinemasearch.data.entity.Film
 import store.devshcherbinavv.cinemasearch.utils.AnimationHelper
+import store.devshcherbinavv.cinemasearch.view.MainActivity
 import store.devshcherbinavv.cinemasearch.view.rv_adapters.FilmListRecyclerAdapter
 import store.devshcherbinavv.cinemasearch.view.rv_adapters.TopSpacingItemDecoration
 import store.devshcherbinavv.cinemasearch.viewmodel.FavoriteFragmentViewModel
