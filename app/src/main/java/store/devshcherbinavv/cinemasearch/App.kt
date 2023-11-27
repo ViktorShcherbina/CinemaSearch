@@ -23,6 +23,7 @@ import java.util.concurrent.TimeUnit
 
 class App : Application() {
     lateinit var dagger: AppComponent
+    var isPromoShown = false
 
     override fun onCreate() {
         super.onCreate()
